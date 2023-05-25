@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .container{
+    max-width: 1140px;
+} */
+
+/* header  */
+
+header{
+    z-index: 9;
+}
+
+header .navbar-nav li{
+    position: relative;
+}
+
+header .navbar-nav li::after{
+    content: "";
+    background-color: #35a22c;
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    transition: all 0.5s;
+    transform: rotate();
+ 
+}
+
+header .navbar-nav li:hover::after{
+    width: 100%;    
+}
+
+header .navbar-nav li:hover a {
+    color: #35a22c !important;
+}
+
+header .navbar-nav li.active::after{
+    width: 100%;
+}
+
+header .navbar-nav li.active a{
+    color: #35a22c !important;
+}
+
+
+
+/* cyber_carousl  */
+
+
+.cyber_carousle .carousel-inner .carousel-item {
+    height: 100vh;
+}
+
+.cyber_carousle .carousel-inner .carousel-item .carousel_content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(39,43,54,.5);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.cyber_carousle .carousel-inner .carousel-item .carousel_content h2{
+    font-size: 60px;
+    font-weight: 400;
+}
+.cyber_carousle .carousel-inner .carousel-item .carousel_content p{
+    font-size: 24px;
+}
+
+.cyber_carousle .carousel-item .carousel_content img{
+    width: 150px;
+    height: 160px;
+    border-radius: 50%;
+}
+.cyber_carousle .carousel-indicators button{
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    
+}
+
+.cyber_carousle .carousel-indicators button.active{
+    background-color: green;
+}
+
+
+/* project  */
+
+.cyber_project .project_content ul button.active{
+    background-color: green;
+    border: 2px solid green !important;
+    color: white !important;
+
+
+}
+.cyber_project .project_content .project_item{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+/* .cyber_project .project_content .row .col-4:hover{
+    cursor: pointer;
+}
+
+.cyber_project .project_content .row .col-4:hover h4{
+    color: #35a22c;
+} */
+
+.cyber_project .project_content .row .col-4 .project_item .project_text{
+    transition: all 0.5s;
+    border: 1px solid transparent;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-top: none;
+} 
+
+.cyber_project .project_content .row .col-4:hover .project_item:hover .project_text{
+    border-color: #35a22c;
+}
+
+.cyber_project .project_content .row .col-4:hover .project_item:hover .project_text h4{
+    color: #35a22c;
+}
+
+
+
+
+
+
+/* avai  */
+
+.cyber_avai{
+    background-image: url(../img/3.jpg);
+    background-attachment: fixed;
+    padding: 60px 0;
+    background-size: cover;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.cyber_avai::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.338);
+    
+}
+
+
+.cyber_avai .avai_content{
+    display: flex;
+    gap: 20px;
+}
+
+.cyber_avai .avai_content .avai_item{
+    background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+padding: 20px 35px 40px 35px;
+transition: all 0.5s;
+
+}
+
+.cyber_avai .avai_content .avai_item i{
+    font-size:40px ;
+    color: #35a22c;
+}
+.cyber_avai .avai_content .avai_item h3{
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.cyber_avai .avai_content .avai_item:hover{
+        background-color: black;
+        border-color: white;
+}
+
+/* tao tren cac thiet bi nho hon 
+ -khi sủ dụng @media : nếu dùng max width thì sẽ lấy tất cả các thiết bị có vùng nhìn từ 0 cho đến giá trị max width nhận vào
+ -quy tắc với max width: là chúng ta để các @media có giá trị max width lớn hơn  nằm ở trên các @media có giá trị max width nhỏ hơn */
+
+@media screen and (max-width: 768px) {
+    .avai_content {
+        flex-wrap: wrap;
+    }
+    .avai_content .avai_item{
+        
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 576px) {  
+    .avai_content .avai_item {
+        width: 100%;
+    }
+}
+    
+
+/* min width ngược lại với max width  */
+/* @media screen and (min-width:576px) {
+
+    .avai_content{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .avai_content{
+        flex-wrap: wrap;
+    }
+    .avai_item{
+        width: calc(50% - 20px);
+    }
+} */
